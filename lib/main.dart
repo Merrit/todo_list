@@ -20,7 +20,7 @@ void main() async {
           create: (context) => authenticationCubit,
         ),
       ],
-      child: MyApp(),
+      child: const App(),
     ),
   );
 }

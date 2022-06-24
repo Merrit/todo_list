@@ -39,7 +39,6 @@ class TasksPage extends StatelessWidget {
                         ),
                       ),
                     );
-                    // }
                   },
                 ),
                 const TaskListView(),

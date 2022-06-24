@@ -3,8 +3,9 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:googleapis_auth/googleapis_auth.dart';
-import 'package:todo_list/src/authentication/google_auth.dart';
-import 'package:todo_list/src/storage/storage_service.dart';
+
+import '../../storage/storage_service.dart';
+import '../google_auth.dart';
 
 part 'authentication_state.dart';
 

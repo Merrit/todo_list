@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:todo_list/src/authentication/cubit/authentication_cubit.dart';
-import 'package:todo_list/src/authentication/login_page.dart';
-import 'package:todo_list/src/tasks/pages/tasks_page.dart';
 
+import 'authentication/cubit/authentication_cubit.dart';
+import 'authentication/login_page.dart';
 import 'constants.dart';
+import 'tasks/pages/tasks_page.dart';
 import 'tasks/tasks.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({
+class App extends StatelessWidget {
+  const App({
     Key? key,
   }) : super(key: key);
 

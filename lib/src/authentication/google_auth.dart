@@ -23,14 +23,6 @@ class GoogleAuth {
     }
 
     return client?.credentials;
-
-    var end;
-
-/*     final tasksApi = TasksApi(client);
-    final taskListsResource = tasksApi.tasklists;
-    final tasks = tasksApi.tasks;
-    final taskLists = await taskListsResource.list();
-    var end; */
   }
 
   Future<void> launchAuthUrl(String url) async {
