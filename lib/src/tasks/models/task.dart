@@ -60,7 +60,7 @@ class Task extends Equatable {
   /// Last modification time of the task (as a RFC 3339 timestamp).
   final String updated;
 
-  Task({
+  const Task({
     required this.completed,
     required this.deleted,
     required this.due,

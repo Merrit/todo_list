@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:todo_list/src/logs/logs.dart';
 
 import 'src/app.dart';
 import 'src/authentication/authentication.dart';
 import 'src/storage/storage_service.dart';
 
 void main() async {
+  initializeLogger();
+
   final storageService = await StorageService.initialize();
 
   final authenticationCubit = await AuthenticationCubit.initialize(

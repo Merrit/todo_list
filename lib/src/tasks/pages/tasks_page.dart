@@ -60,11 +60,15 @@ class TaskListView extends StatelessWidget {
       builder: (context, state) {
         if (state.activeList == null) return const SizedBox();
 
-        return Expanded(
+        return SizedBox(
+          width: 500,
           child: ListView(
             children: state.activeList!.items
                 .map((e) => Card(
-                      child: Text(e.title),
+                      child: Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Text(e.title),
+                      ),
                     ))
                 .toList(),
           ),
