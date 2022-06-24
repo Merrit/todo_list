@@ -40,7 +40,11 @@ class GoogleTasks {
 
 extension on TaskList {
   Future<models.TaskList> toModel(TasksApi api) async {
-    final apiTasks = await api.tasks.list(id!);
+    final apiTasks = await api.tasks.list(
+      id!,
+      showCompleted: true,
+      showHidden: true,
+    );
 
     return models.TaskList(
       id: id!,
