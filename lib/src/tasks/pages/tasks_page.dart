@@ -65,29 +65,48 @@ class TaskListView extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                child: ListView(
+                child: ReorderableListView(
+                  buildDefaultDragHandles: false,
+                  onReorder: (oldIndex, newIndex) {},
                   children: state.activeList!.items
                       .where((element) => !element.completed)
-                      .map((e) => Card(
-                            child: Padding(
-                              padding: const EdgeInsets.all(15.0),
-                              child: Text(e.title),
-                            ),
-                          ))
+                      .map((e) => TaskTile(key: ValueKey(e), task: e))
                       .toList(),
                 ),
               ),
-              ExpansionTile(
-                title: const Text('Completed'),
-                children: state.activeList!.items
-                    .where((element) => element.completed)
-                    .map((e) => ListTile(title: Text(e.title)))
-                    .toList(),
-              ),
+              if (state.activeList!.items.any((element) => element.completed))
+                ExpansionTile(
+                  title: const Text('Completed'),
+                  children: state.activeList!.items
+                      .where((element) => element.completed)
+                      .map((e) => TaskTile(task: e))
+                      .toList(),
+                ),
             ],
           ),
         );
       },
+    );
+  }
+}
+
+class TaskTile extends StatelessWidget {
+  final Task task;
+
+  const TaskTile({
+    Key? key,
+    required this.task,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text(task.title),
+      leading: Checkbox(
+        value: task.completed,
+        onChanged: (bool? value) {},
+      ),
+      onTap: () {},
     );
   }
 }
